@@ -42,8 +42,8 @@ socket.on("buenas", function (msg) {
 
 btnMensaje2.addEventListener("click",()=>{
     let a = txtNombre2.value.toUpperCase()  
-    socket.emit("mensajeTodos", `${fecha2}/  ${a} : ${txtMensaje2.value}`, function (rtaServidor) {
-        let mensaje1 = `<li>${fecha2} ${a} ${txtMensaje2.value}</li>`
+    socket.emit("mensajeTodos", `${fecha2}  ${a} : ${txtMensaje2.value}`, function (rtaServidor) {
+        let mensaje1 = `<li>${fecha2} ${a} : ${txtMensaje2.value}</li>`
         Chat.push(mensaje1)
       for (let i=0; i<Chat.length; i++){
         document.getElementById("mensaje").innerHTML = Chat
@@ -55,14 +55,11 @@ btnMensaje2.addEventListener("click",()=>{
 })
 
 socket.on("notificar", function(msg){
-
   let mensaje1 = `<li>${msg}</li>`
-
   Chat.push(mensaje1)
   for (let i=0; i<Chat.length; i++){
   document.getElementById("mensaje").innerHTML = Chat
   }
-
   console.log(mensaje1);
 })
 

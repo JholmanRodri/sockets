@@ -17,13 +17,12 @@ const socketController =(socket)=>{
     //     socket.broadcast.emit('notificar',msg)
     //     callback('Mensaje enviado')
     // })
-
     socket.on('mensajeTodos',function(msg,callback){
         console.log(msg);
         socket.broadcast.emit('notificar',msg)
         callback('Mensaje enviado')
     })
-
 }
+
 
 export default socketController 
