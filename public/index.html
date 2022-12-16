@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sockets</title>
-</head>
-<body class="conatiner-fluid">
-    <h1>Sockets Client</h1>
+  </head>
+  <body class="conatiner-fluid">
+    <!-- <h1>Sockets Client</h1>
     <br>
     <input type="text" id="txtNombre">
     <input type="button" value="Saludar a todos" id="btnSaludar">
@@ -15,9 +15,124 @@
     <hr>
     <input type="text" id="txtMensaje">
     <input type="button" value="enviar mensaje" id="btnMensaje">
-    
+    <form action="">
+     -->
+<!-- 
+    <h1>Nombre</h1>
+    <input type="text" id="txtNombre2" />
+    <h1>Mensaje</h1>
+    <input type="text" id="txtMensaje2" />
+
+    <input type="button" value="Envia Mensaje al grupo" id="btnMensaje2" />
+
+    <div>
+      <p id="mensaje" class="caja"></p>
+    </div> -->
+
+    <div id="wrapper">
+      <div id="menu">
+        <p class="welcome">Welcome, <b> <input type="text" id="txtNombre2" /></b></p>
+        <!-- <p class="logout"><a id="exit" href="#">Exit Chat</a></p> -->
+        <div style="clear: both"></div>
+      </div>
+
+      <div class="chatbox" id="mensaje">
+
+      </div>
+
+      <form name="message" action="">
+        <input  type="text" id="txtMensaje2"  size="63" />
+        <input  type="button" id="btnMensaje2" value="Enviar" />
+      </form>
+    </div>
     <script src="./socket.io/socket.io.js"></script>
     <script src="./js/index.js"></script>
-
-</body>
+  </body>
 </html>
+
+<style>
+  body {
+    font: 12px arial;
+    color: #222;
+    text-align: center;
+    padding: 35px;
+  }
+
+  form,
+  p,
+  span {
+    margin: 0;
+    padding: 0;
+  }
+
+  input {
+    font: 12px arial;
+  }
+
+  a {
+    color: #0000ff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  #wrapper,
+  #loginform {
+    margin: 0 auto;
+    padding-bottom: 25px;
+    background: #ebf4fb;
+    width: 504px;
+    border: 1px solid #acd8f0;
+  }
+
+  #loginform {
+    padding-top: 18px;
+  }
+
+  #loginform p {
+    margin: 5px;
+  } 
+
+  .chatbox {
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    padding: 10px;
+    background: #fff;
+    height: 270px;
+    width: 430px;
+    border: 1px solid #acd8f0;
+    overflow: auto;
+  }
+
+  #usermsg {
+    width: 395px;
+    border: 1px solid #acd8f0;
+  }
+
+  #submit {
+    width: 60px;
+  }
+
+  .error {
+    color: #ff0000;
+  }
+
+  #menu {
+    padding: 12.5px 25px 12.5px 25px;
+  }
+
+  .welcome {
+    float: left;
+  }
+
+  .logout {
+    float: right;
+  }
+
+  .msgln {
+    margin: 0 0 2px 0;
+  }
+</style>
